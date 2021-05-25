@@ -3,8 +3,10 @@ services:
   - docker
 
 
+language: generic
+
 before_install:
   - docker build -t piotrwlazel/docker-react -f Dockerfile.dev . 
 
 script:
-  - docker run -e CI=true piotrwlazel/docker-react npm run test -- --coverage
+  - docker run -e CI=true piotrwlazel/docker-react npm run test
